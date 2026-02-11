@@ -55,14 +55,63 @@
 
 // Print Fibonacci Series Upto N
 
-function fibonacci(num) {
-  let digit = [0, 1];
+// function fibonacci(num) {
+//   let digit = [0, 1];
 
-  for (let i = 2; i < num; i++) {
-    digit.push(digit[i - 1] + digit[i - 2]);
+//   for (let i = 2; i < num; i++) {
+//     digit.push(digit[i - 1] + digit[i - 2]);
+//   }
+
+//   return digit;
+// }
+
+// console.log(fibonacci(10));
+
+// *****************************************************************************************************************
+
+// Print Nth Fibonacci Num
+
+// function nthFibonacci(num) {
+//   let fibonacci = [0, 1];
+
+//   for (let i = 2; i < num; i++) {
+//     fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+//   }
+
+//   return fibonacci[fibonacci.length - 1];
+// }
+
+// console.log(nthFibonacci(8));
+
+// *****************************************************************************************************************
+
+// Check if a Number belongs to Fibonacci series
+
+// function checkFiboSeries(num) {
+//   let digit = [0, 1];
+
+//   for (let i = 2; true; i++) {
+//     const elementToPush = digit[i - 1] + digit[i - 2];
+//     digit.push(elementToPush);
+
+//     if (elementToPush === num || num === 0) return true;
+//     if (elementToPush > num) break;
+//   }
+
+//   return false;
+// }
+
+// console.log(checkFiboSeries(34));
+
+function checkFiboSeries(num) {
+  if (
+    Number.isInteger(Math.sqrt(5 * num ** 2 + 4)) ||
+    Number.isInteger(Math.sqrt(5 * num ** 2 - 4))
+  ) {
+    return true;
   }
 
-  return digit;
+  return false;
 }
 
-console.log(fibonacci(10));
+console.log(checkFiboSeries(34));

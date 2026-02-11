@@ -103,15 +103,46 @@
 
 // console.log(checkFiboSeries(34));
 
-function checkFiboSeries(num) {
-  if (
-    Number.isInteger(Math.sqrt(5 * num ** 2 + 4)) ||
-    Number.isInteger(Math.sqrt(5 * num ** 2 - 4))
-  ) {
-    return true;
+// function checkFiboSeries(num) {
+//   if (
+//     Number.isInteger(Math.sqrt(5 * num ** 2 + 4)) ||
+//     Number.isInteger(Math.sqrt(5 * num ** 2 - 4))
+//   ) {
+//     return true;
+//   }
+
+//   return false;
+// }
+
+// console.log(checkFiboSeries(34));
+
+// *****************************************************************************************************************
+
+// HomeWork
+
+// Print all Prime numbers Upto N
+
+function getPrimes(N) {
+  if (N <= 1) return [];
+
+  const primes = [];
+
+  for (let i = 2; i <= N; i++) {
+    let isPrime = true;
+
+    for (let j = 2; j * j <= i; j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      primes.push(i);
+    }
   }
 
-  return false;
+  return primes;
 }
 
-console.log(checkFiboSeries(34));
+console.log(getPrimes(20));
